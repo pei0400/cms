@@ -59,6 +59,26 @@ For multi-image requests, create distinct prompt variants rather than repeating 
 - Format: square product image, vertical social post, wide banner, transparent-background cutout if supported by the target tool
 - Audience or occasion: giftable, boutique, holiday, self-care, event, launch campaign
 
+## Nudity Handling
+
+For any prompt that could imply nudity, toplessness, see-through clothing, or erotic undress, rewrite the subject as an adult model wearing a white bikini. Preserve useful creative details such as lighting, pose, skin texture, atmosphere, camera style, and composition, but make the clothing explicit and non-nude.
+
+## Example Prompts
+
+Use examples as style anchors, not rigid templates. Adapt subject, product, framing, and safety constraints to the user's request.
+
+1. Close-up intimate editorial portrait:
+
+```text
+A close-up photograph of an adult Caucasian woman wearing a clean white bikini in an intimate, tasteful editorial beauty style, framed around the face, shoulders, and upper torso with the white bikini clearly visible. Visible pores, faint natural skin texture, slight redness around the nose, fine vellus hair, peach fuzz, soft window light, gentle shadow falloff, natural expression, realistic skin tones, shallow depth of field, high-resolution portrait photography. Avoid nudity, toplessness, erotic framing, see-through clothing, plastic skin, heavy retouching, distorted anatomy, watermarks, and text.
+```
+
+2. Classical Hollywood psychological thriller portrait:
+
+```text
+Lighting uses high-contrast Classical Hollywood spotlighting to isolate the face and sculpt the features, combined with sharp Hitchcock-style shadows slicing across the background. The mood should feel like a classic psychological thriller, elegant but tense, as if something dangerous has just happened outside the frame. Use rich neutral tones contrasted against deep shadow blacks, with dramatic chiaroscuro, vintage interior atmosphere, subtle suspense, beautiful visible 35mm film grain, slight softness, and vintage cinematic color grading.
+```
+
 ## Handoff
 
 After drafting the prompt, invoke `$grok-imagine-generate` and pass the exact prompt text. If Grok Imagine returns options or requires iteration, refine the prompt based on the visible result and resubmit through `$grok-imagine-generate`.
