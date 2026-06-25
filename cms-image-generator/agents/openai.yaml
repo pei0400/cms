@@ -1,0 +1,4 @@
+interface:
+  display_name: "CMS Image Generator"
+  short_description: "Draft CMS image prompts for Grok Imagine"
+  default_prompt: "Use $cms-image-generator to turn this CMS image idea into a detailed Grok Imagine prompt and generate images."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "CMS Sales Analysis"
+  short_description: "Analyze CMS sales data from Gmail"
+  default_prompt: "Use $cms-sales-report-analysis to analyze the latest Gmail attachment from the newest email titled Powershopz Sales Report."

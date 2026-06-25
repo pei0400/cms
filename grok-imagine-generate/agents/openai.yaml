@@ -1,0 +1,4 @@
+interface:
+  display_name: "Grok Imagine Generate"
+  short_description: "Create and submit flexible Grok image prompts."
+  default_prompt: "Use $grok-imagine-generate to create image prompts from this scene:"

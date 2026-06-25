@@ -1,0 +1,4 @@
+interface:
+  display_name: "CMS Post Process"
+  short_description: "Create combined highlight GIFs from videos"
+  default_prompt: "Use $cms-post-process to process videos in this folder, export highlight screenshots and the combined GIF to the original directory, and remove individual GIF clips after combining."
