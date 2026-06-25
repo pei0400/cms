@@ -1,4 +1,4 @@
-﻿---
+---
 name: cms-image-generator
 description: Create detailed, production-ready text prompts for Crimson Muse Studio (CMS) image concepts, then use the Grok Imagine image-generation skill to submit those prompts and generate images. Use when the user asks to make CMS product images, lifestyle images, promotional visuals, social content, ads, mockups, or other image assets through Grok Imagine from a brief idea, rough direction, product name, theme, or campaign concept.
 ---
