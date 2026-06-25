@@ -1,6 +1,6 @@
 ---
 name: grok-imagine-generate
-description: Use when the user asks Codex to generate Grok Imagine images, create AI image prompts from text or an uploaded image, produce prompt variants, iterate on a previous prompt version, enter prompts into Grok, press the Grok Imagine submit/up-arrow button, queue multiple generations, reuse an open Grok Imagine tab, or operate Grok through Chrome with the user's logged-in session.
+description: Use when the user asks Codex to generate Grok Imagine images, create AI image prompts from text or an uploaded image, produce prompt variants, iterate on a previous prompt version, enter prompts into Grok, press the Grok Imagine submit/up-arrow button, queue multiple generations, reuse an open Grok Imagine tab, or operate Grok through Chrome with the user's logged-in session. For character prompts, always include a concise body type description. For revisions, generate standalone prompt text that restates all retained subject, scene, style, body type, and composition details instead of referring to the previous image/version.
 ---
 
 # Grok Imagine Generate
@@ -38,6 +38,7 @@ Prompt rules:
 - Match the user's requested prompt count. If unspecified, default to three versions for a fresh prompt-generation request.
 - Match the user's requested length. If unspecified, use enough detail to make the prompt image-ready without padding.
 - Match the user's requested medium and style, such as cinematic realism, anime, illustration, product render, editorial portrait, poster art, abstract, surreal, architectural visualization, logo concept, or any other requested direction.
+- For every character prompt, include a concise body type description. If the user specifies body type, preserve it. If not, infer a tasteful, non-explicit body type consistent with the character, genre, wardrobe, and composition.
 - Include camera, composition, lighting, material, mood, or rendering details when useful, but do not force cinematic or photorealistic language when it does not fit the request.
 - Do not require a fixed signature, fixed word count, fixed style phrase, fixed camera language, or mandatory `movie screenshot`, `film still`, `photorealistic`, or `hyperrealistic` wording unless the user asks for those qualities.
 
@@ -101,7 +102,7 @@ Iteration rules:
 
 ## Prompt Handling
 
-Preserve the user's requested subject and style. Lightly rewrite prompts only to make them clearer for image generation, add explicit constraints, or create requested variants.
+Preserve the user's requested subject and style. Lightly rewrite prompts only to make them clearer for image generation, add explicit constraints, create requested variants, and include body type descriptions for character prompts. For revisions, the prompt submitted to Grok must be complete and self-contained, with all retained details repeated explicitly rather than referenced indirectly.
 
 When the user supplies a rough idea rather than a finished prompt, make it image-ready by adding only practical visual details:
 
@@ -147,4 +148,6 @@ Use this structure for multi-prompt batches:
 - If Chrome extension communication fails, follow the Chrome skill's recovery instructions and do not use OS-level browser scripting as a workaround.
 - If a prompt remains in the editor after clicking Submit, check for validation messages, blocked content, or a disabled button before retrying.
 - If Grok starts generating but the final images are not ready before the turn ends, do not submit additional queued prompts. Hand off with the tab open and say which prompt is still generating and which prompts remain unsubmitted.
+- Before submitting a revision prompt, scan it for dependency phrases such as "previous", "same as before", "keep the same", "from the last image", or "that version". Replace them with explicit retained details before clicking Submit.
+- Before submitting any character prompt, verify it includes a body type description. Add one if missing, keeping it tasteful, non-explicit, and consistent with the user request.
 - Do not download, copy, or modify generated images unless the user asks.
